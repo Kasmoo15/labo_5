@@ -12,6 +12,8 @@ int main() {
 
     std::array<int, 10> pile{1, 2, 3, 4, 5, 6, 7, 8, 9};
     int userAnswer;
+    int unsigned count = 0;
+    int unsigned *ptr_count = &count;
 
 
 
