@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include "functions.h"
 
 int push(std::array<int,10> pile);
 //int pop();
@@ -55,14 +56,21 @@ int main() {
 
             case 5:
                 //empty();
+                if (empty(ptr_count))
+                    std::cout << "La pile est vide." << std::endl;
+                else
+                    std::cout << "La pile n'est pas vide." << std::endl;
                 break;
 
             case 6:
                 //size();
+                std::cout << "Nombre de valeurs : " << size(ptr_count) << std::endl;
                 break;
 
             case 7:
                 // Empty the pile by removing every values
+                clear(ptr_count);
+                std::cout << "Pile vidée." << std::endl;
                 break;
 
             case 8:
