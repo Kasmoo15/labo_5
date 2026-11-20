@@ -37,7 +37,11 @@ int main() {
 
         switch (userAnswer) {
             case 1:
-                push(pile);
+                std::cout << "Valeur : ";
+                std::cin >> userAnswer;
+                push(pile, ptr_count, userAnswer);
+                std::cout << "Valeur empilée." << std::endl;
+                std::cout << count << std::endl;
                 break;
 
             case 2:
@@ -93,19 +97,19 @@ int main() {
 
 }
 
-int push(std::array<int, 10> a) {
-
-    // TODO: Loop into the array
-    for (int e: a) {
-        std::cout << e << " ";
-    }
-
-    //TODO: Find the 0 (they are the non initialized values)
-
-    //TODO: change the last find 0 by the value asked by the user
-
-    std::cerr << "Erreur : impossible d'empiler dans une pile pleine.";
-    return 0;
-
-
-}
+// int push(std::array<int, 10> a) {
+//
+//     // TODO: Loop into the array
+//     for (int e: a) {
+//         std::cout << e << " ";
+//     }
+//
+//     //TODO: Find the 0 (they are the non initialized values)
+//
+//     //TODO: change the last find 0 by the value asked by the user
+//
+//     std::cerr << "Erreur : impossible d'empiler dans une pile pleine.";
+//     return 0;
+//
+//
+// }
