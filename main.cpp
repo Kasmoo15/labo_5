@@ -2,12 +2,6 @@
 #include <array>
 #include "functions.h"
 
-int push(std::array<int,10> pile);
-//int pop();
-//int top();
-//bool empty();
-//int size();
-//int clear();
 
 int main() {
 
@@ -41,7 +35,6 @@ int main() {
                 std::cin >> userAnswer;
                 push(pile, ptr_count, userAnswer);
                 std::cout << "Valeur empilée." << std::endl;
-                std::cout << count << std::endl;
                 break;
 
             case 2:
@@ -55,11 +48,10 @@ int main() {
 
 
             case 4:
-                // top(); use a surcharge function to differentialte between case 3 and 4
+                // top(); use a surcharge function to differentiate between case 3 and 4
                 break;
 
             case 5:
-                //empty();
                 if (empty(ptr_count))
                     std::cout << "La pile est vide." << std::endl;
                 else
@@ -67,12 +59,10 @@ int main() {
                 break;
 
             case 6:
-                //size();
                 std::cout << "Nombre de valeurs : " << size(ptr_count) << std::endl;
                 break;
 
             case 7:
-                // Empty the pile by removing every values
                 clear(ptr_count);
                 std::cout << "Pile vidée." << std::endl;
                 break;
@@ -96,20 +86,3 @@ int main() {
     return 0;
 
 }
-
-// int push(std::array<int, 10> a) {
-//
-//     // TODO: Loop into the array
-//     for (int e: a) {
-//         std::cout << e << " ";
-//     }
-//
-//     //TODO: Find the 0 (they are the non initialized values)
-//
-//     //TODO: change the last find 0 by the value asked by the user
-//
-//     std::cerr << "Erreur : impossible d'empiler dans une pile pleine.";
-//     return 0;
-//
-//
-// }
