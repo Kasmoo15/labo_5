@@ -5,7 +5,7 @@
 
 int main() {
 
-    std::array<int, 10> pile{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    std::array<int, 10> pile{};
     int userAnswer;
     int unsigned count = 0;
     int unsigned *ptr_count = &count;
@@ -31,14 +31,26 @@ int main() {
 
         switch (userAnswer) {
             case 1:
-                std::cout << "Valeur : ";
-                std::cin >> userAnswer;
-                push(pile, ptr_count, userAnswer);
-                std::cout << "Valeur empilée." << std::endl;
+                //push()
+                try {
+                    int valeur;
+                    std::cout << "Valeur : ";
+                    std::cin >> valeur;
+                    push(pile, ptr_count, valeur);
+                    std::cout << "Valeur empilée." << std::endl;
+                } catch (const std::exception& erreur) {
+                    std::cout << "Erreur : " << erreur.what() << std::endl;
+                }
                 break;
 
             case 2:
-                //pop();
+                //pop()
+                try {
+                    pop(pile, ptr_count);
+                    std::cout << "Valeur retirée : " << pile.at(*ptr_count) << std::endl;
+                }catch (const std::underflow_error& erreur) {
+                    std::cout << "Erreur : " << erreur.what() << std::endl;
+                }
                 break;
 
 

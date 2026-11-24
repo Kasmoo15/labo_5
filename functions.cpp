@@ -1,20 +1,21 @@
-//
-// Created by ruben on 18.11.2026.
-//
-
 #include "functions.h"
 
 #include <array>
 #include <iostream>
-#include <ostream>
+
+void pop(std::array<int, 10>& pile, unsigned int* ptr_count) {
+    if (*ptr_count == 0) {
+        throw std::underflow_error("impossible de dépiler une pile vide.");
+    }
+    --*ptr_count;
+}
 
 void push(std::array<int, 10>& pile, unsigned int* ptr_count, int value) {
-    try {
-        pile.at(*ptr_count) = value;
-        *ptr_count += 1;
-    }catch (const std::out_of_range& e) {
-        std::cerr << "Erreur : impossible d'empiler dans une pile pleine.";
+    if (*ptr_count >= pile.size()) {
+        throw std::overflow_error("impossible d'empiler dans une pile pleine.");
     }
+    pile.at(*ptr_count) = value;
+    ++*ptr_count;
 }
 
 // Checks if the stack is empty.
