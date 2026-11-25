@@ -32,3 +32,25 @@ unsigned int size(unsigned int* ptr_count) {
 void clear(unsigned int* ptr_count) {
     *ptr_count = 0;
 }
+
+int top(std::array<int, 10>& pile, int unsigned *ptr_count) {
+
+    int sum = 0;
+
+    for (int i = 0; i < *ptr_count; ++i) {
+        sum += pile[*ptr_count -1  - i];
+    }
+
+    return sum;
+}
+
+int top(int new_num, std::array<int, 10>& pile, int unsigned *ptr_count) {
+
+    for (int i = 0; i < *ptr_count; ++i) {
+        if (i == 0) {
+            pile[*ptr_count -1  - i] = new_num;
+        }
+    }
+    return new_num;
+}
+

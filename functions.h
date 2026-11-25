@@ -12,4 +12,8 @@ unsigned int size(unsigned int* ptr_count);
 
 void clear(unsigned int* ptr_count);
 
-#endif
+int top(std::array<int, 10>& pile, int unsigned *ptr_count);
+
+int top(int new_num, std::array<int, 10>& pile, int unsigned *ptr_count);
+
+#endif //LABO05_PILE_FUNCTIONS_H

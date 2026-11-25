@@ -1,13 +1,14 @@
 #include <iostream>
 #include <array>
 #include "functions.h"
+#include <iomanip>
 
 
 int main() {
 
     std::array<int, 10> pile{};
     int userAnswer;
-    int unsigned count = 0;
+    int unsigned count = 3;
     int unsigned *ptr_count = &count;
 
 
@@ -55,12 +56,17 @@ int main() {
 
 
             case 3:
-                //top();
+                std::cout << top(pile, ptr_count) << std::endl;
                 break;
 
 
             case 4:
                 // top(); use a surcharge function to differentiate between case 3 and 4
+                std::cout << "Valeur de remplacement: ";
+                int replaceValue;
+                std::cin >> replaceValue;
+                top(replaceValue, pile, ptr_count);
+
                 break;
 
             case 5:
@@ -80,14 +86,26 @@ int main() {
                 break;
 
             case 8:
-                /* for loop that displays all values in the following format:
-                 * Sommet -> -3
-                 * 7
-                 * 12
-                 * Fond   -> 42
-                 *
-                 * If a value is not initialized it should be displayed as a "?"
-                 */
+                //for loop that displays all values in the following format:
+                std::cout << "" << std::endl;
+
+
+                for (int i = 0; i < *ptr_count; ++i) {
+
+                    if (i == *ptr_count - 1) {
+                        std::cout << "Fond   -> " << pile[*ptr_count -1  - i] << std::endl;
+                    }
+                    else if (i == 0) {
+                        std::cout << "Sommet -> " << pile[*ptr_count -1  - i] << std::endl;
+                    }
+                    else {
+                        std::cout << std::setw(11) << pile[*ptr_count -1  - i] << std::endl;
+                    }
+
+                }
+
+                std::cout << "" << std::endl;
+
                 break;
 
         }
